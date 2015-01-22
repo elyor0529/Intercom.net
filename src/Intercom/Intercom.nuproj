@@ -19,14 +19,13 @@
   <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
   <PropertyGroup Label="Configuration">
     <Id>Intercom</Id>
-    <Version>1.0.0-beta</Version>
+    <Version>1.0.0-alpha</Version>
     <Title>Intercom</Title>
     <Authors>Pedro Alonso</Authors>
     <Owners>Pedro Alonso</Owners>
     <Summary>Intercom</Summary>
     <Description>Intercom</Description>
-    <ReleaseNotes>
-    </ReleaseNotes>
+    <ReleaseNotes>Only supporting events at the moment.</ReleaseNotes>
     <ProjectUrl>https://github.com/pedropaf/Intercom.net</ProjectUrl>
     <LicenseUrl>https://github.com/pedropaf/Intercom.net/blob/master/LICENSE</LicenseUrl>
     <Copyright>Copyright © Pedro</Copyright>
