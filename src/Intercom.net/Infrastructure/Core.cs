@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Text;
 using RestSharp;
 using RestSharp.Extensions;
+using RestSharp.Authenticators;
 
 namespace Intercom
 {

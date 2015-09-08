@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using RestSharp;
+using System;
 
 namespace Intercom
 {
@@ -7,17 +8,28 @@ namespace Intercom
     {
         public virtual bool SubmitEvent(IntercomEvent intercomEvent)
         {
-            var request = new RestRequest(Method.POST)
+            bool result = false;
+
+            try
             {
-                Resource = "events",
-                RequestFormat = DataFormat.Json,
-                JsonSerializer = new RestSharpJsonNetSerializer()
-            };
-            request.AddJsonBody(intercomEvent);
+                var request = new RestRequest(Method.POST)
+                {
+                    Resource = "events",
+                    RequestFormat = DataFormat.Json,
+                    JsonSerializer = new RestSharpJsonNetSerializer()
+                };
+                request.AddJsonBody(intercomEvent);
 
-            var response = Execute(request);
+                var response = Execute(request);
 
-            return (response.StatusCode == HttpStatusCode.Accepted);
+                result = (response.StatusCode == HttpStatusCode.Accepted);
+            }
+            catch(Exception ex)
+            {
+                // TODO: log
+            }
+
+            return false;
         }
     }
 }
